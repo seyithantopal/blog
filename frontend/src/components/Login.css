@@ -1,0 +1,146 @@
+@font-face {
+	font-family: Roboto-Thin;
+	src: url('/fonts/Roboto-Thin.ttf');
+}
+@font-face {
+	font-family: Roboto-Light;
+	src: url('/fonts/Roboto-Light.ttf');
+}
+@font-face {
+	font-family: Roboto-Regular;
+	src: url('/fonts/Roboto-Regular.ttf');
+}
+@font-face {
+	font-family: Roboto-Medium;
+	src: url('/fonts/Roboto-Medium.ttf');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	background-color: #f2f2f2;
+}
+
+.login-box {
+	display: flex;
+	width: 90vw;
+	height: 90vh;
+	margin: auto;
+}
+
+.login {
+	background-color: #ffffff;
+	width: 450px;
+	height: 600px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 20px 0px #dbdbdb;
+	-moz-box-shadow: 0px 0px 20px 0px #dbdbdb;
+	-o-box-shadow: 0px 0px 20px 0px #dbdbdb;
+	box-shadow: 0px 0px 20px 0px #dbdbdb;
+}
+
+.login-top-text {
+	font: 31px Roboto-Regular;
+	margin-top: 50px;
+}
+
+.login-logo {
+	font: 25px Roboto-Thin;
+	margin-bottom: 20px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.login-account {
+	font: 14px Roboto-Light;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.icon-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.login-form form .username-icon {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	/*margin-top: 10px;*/
+}
+
+.login-form form .eye-icon {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	margin-left: 270px;
+}
+
+.login-form form .email,
+.login-form form .password {
+	border-radius: 0;
+	border: 0;
+	border-bottom: 0.5px solid #000;
+	padding-left: 30px;
+	width: 300px;
+}
+
+.login-form form .password {
+	border-radius: 0;
+	border: 0;
+	border-bottom: 0.5px solid #000;
+	padding-left: 30px;
+	padding-right: 35px;
+	width: 300px;
+}
+
+.login-form form .login-btn {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	border: 0;
+	width: 300px;
+	height: 40px;
+	background: linear-gradient(100deg, #a659ff, #a659ff);
+	color: #fff;
+	margin-top: -10px;
+}
+
+.login-form form .login-btn:hover {
+	background: linear-gradient(100deg, #b471ff, #ae74f0);
+}
+
+.form-group {
+	margin-bottom: 30px;
+}
+
+.form-check {
+	margin-bottom: 30px;
+}
+
+.login-form form .email:focus,
+.password:focus {
+	box-shadow: 0 0 0;
+}
+
+.remember-me-label {
+	font-family: Roboto-Light;
+}
