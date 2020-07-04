@@ -28,6 +28,11 @@ const postSchema = new Schema({
 		required: false,
 		default: 'John Doe',
 	},
+	rank: {
+		type: Number,
+		required: false,
+		default: 0,
+	},
 	date: {
 		type: Date,
 		default: Date.now,

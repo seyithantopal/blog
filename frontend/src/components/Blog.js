@@ -37,14 +37,11 @@ const Blog = (match) => {
 	};*/
 
 	useEffect(() => {
-		console.log('fetching...');
 		axios.get('/api/post/all').then((response) => {
 			setPosts(response.data.results);
-			//setFilteredData(response.data.results);
+			setFilteredData(response.data.results);
 		});
 	}, []);
-
-	console.log(posts);
 
 	// Getting posts by category
 	useEffect(() => {
@@ -65,7 +62,9 @@ const Blog = (match) => {
 		let items = [];
 		for (let i = 1; i <= 5; i++) {
 			i <= stars
-				? items.push(<span key={i} className="fa fa-star checked"></span>)
+				? items.push(
+						<span key={i} className="fa fa-star checked"></span>
+				  )
 				: items.push(<span key={i} className="fa fa-star"></span>);
 		}
 		return items;
@@ -135,7 +134,11 @@ const Blog = (match) => {
 								placeholder="Search"
 								className="form-control search-box"
 							/>
-							<img src="/images/assets/search.png" width="32" height="32" />
+							<img
+								src="/images/assets/search.png"
+								width="32"
+								height="32"
+							/>
 						</div>
 					</div>
 				</div>
@@ -148,27 +151,41 @@ const Blog = (match) => {
 								</div>
 								<Link
 									to={`/blog/category/${post.category.toLowerCase()}`}
-									style={{ textDecoration: 'none', color: '#000' }}
+									style={{
+										textDecoration: 'none',
+										color: '#000',
+									}}
 								>
 									<div
 										data-category={post.category.toLowerCase()}
 										className="post-category"
 									>
-										<span className={`post-${post.category.toLowerCase()}`}>
+										<span
+											className={`post-${post.category.toLowerCase()}`}
+										>
 											{post.category}
 										</span>
 									</div>
 								</Link>
-								<div className="post-stars">{countStars(post.rank)}</div>
+								<div className="post-stars">
+									{countStars(post.rank)}
+								</div>
 								<Link
 									to={`/blog-detail/${post._id}`}
-									style={{ textDecoration: 'none', color: '#000' }}
+									style={{
+										textDecoration: 'none',
+										color: '#000',
+									}}
 								>
-									<div className="post-title">{post.title}</div>
+									<div className="post-title">
+										{post.title}
+									</div>
 								</Link>
 								<div className="post-author-and-date">
 									<div className="col-md-6">
-										<div className="post-author">{post.author}</div>
+										<div className="post-author">
+											{post.author}
+										</div>
 									</div>
 									<div className="col-md-6">
 										<div className="post-date text-right">
@@ -189,12 +206,21 @@ const Blog = (match) => {
 							<div className="popular" key={post._id}>
 								<Link
 									to={`/blog-detail/${post._id}`}
-									style={{ textDecoration: 'none', color: '#000' }}
+									style={{
+										textDecoration: 'none',
+										color: '#000',
+									}}
 								>
-									<div className="popular-title">{post.title}</div>
+									<div className="popular-title">
+										{post.title}
+									</div>
 								</Link>
-								<div className="popular-category">{post.category}</div>
-								<div className="popular-stars">{countStars(post.rank)}</div>
+								<div className="popular-category">
+									{post.category}
+								</div>
+								<div className="popular-stars">
+									{countStars(post.rank)}
+								</div>
 								{i === posts.length - 1 ? '' : <hr />}
 							</div>
 						))}
